@@ -199,3 +199,57 @@ h4 {
     transform: rotate(0deg);
   }
 }
+
+@media (max-width: 768px) {
+
+  /* Card lebih kecil + turun */
+  .card {
+    width: 250px;
+    height: 350px;
+    top: 60%;
+    transform: translate(-50%, -50%) perspective(2000px) rotate(5deg);
+  }
+
+  /* Disable hover total di mobile */
+  .card:hover {
+    transform: translate(-50%, -50%) perspective(2000px) rotate(5deg);
+    box-shadow: inset 300px 0 50px rgba(0,0,0,.4),
+                15px 0 40px rgba(0,0,0,.3);
+  }
+
+  .card:hover .imgBox {
+    transform: none;
+  }
+
+  .card:hover .bark {
+    opacity: 0;
+  }
+
+  /* Open mode di HP */
+  .card.open .imgBox {
+    transform: rotateY(-135deg);
+  }
+
+  /* Shadow bark dikurangin biar gak gelap */
+  .card.open .bark {
+    opacity: 1;
+    box-shadow: 120px 80px 60px rgba(0, 0, 0, .25) inset;
+  }
+
+  /* Text spacing lebih enak */
+  .card .details {
+    margin-top: 55px;
+  }
+
+  /* Balikin vibe tulisan miring tipis */
+  .card .details p {
+    font-size: 14px;
+    line-height: 18px;
+    transform: rotate(-4deg); /* subtle aja */
+  }
+
+  /* Signature lebih turun */
+  .text-right {
+    margin-top: 18px;
+  }
+}
