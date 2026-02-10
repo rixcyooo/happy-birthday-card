@@ -155,3 +155,18 @@ h4 {
     opacity: 0;
   }
 }
+
+@media (max-width: 768px) {
+
+  .card.open {
+    transform: translate(-50%, -50%) perspective(2000px) rotate(10deg) scale(1.05);
+  }
+
+  .card.open .imgBox {
+    transform: rotateY(-135deg);
+  }
+
+  .card.open .bark {
+    opacity: 1;
+  }
+}
