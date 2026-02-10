@@ -253,3 +253,45 @@ h4 {
     margin-top: 18px;
   }
 }
+
+@media (max-width: 768px) {
+
+  /* Mobile layout normal */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    transform: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  /* Disable all hover + 3D animation */
+  .card:hover {
+    transform: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  .card .imgBox {
+    display: none; /* cover di-hide biar langsung isi ucapan */
+  }
+
+  .card .details {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .card .details p {
+    transform: none;
+    line-height: 18px;
+    font-size: 14px;
+  }
+}
