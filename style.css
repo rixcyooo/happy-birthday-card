@@ -139,24 +139,19 @@ h4 {
 }
 
 @media (max-width: 768px) {
-  .card {
-    width: 260px;
-    height: 360px;
-    transform: translate(-50%, -50%) perspective(2000px) scale(1);
-  }
 
+  /* Disable hover effect on mobile */
   .card:hover {
-    transform: translate(-50%, -50%) perspective(2000px) scale(1);
+    transform: translate(-50%, -50%) perspective(2000px);
+    box-shadow: inset 300px 0 50px rgba(0,0,0,.5),
+                20px 0 60px rgba(0,0,0,.5);
   }
 
-  .card .details p {
-    font-size: 14px;
-    line-height: 16px;
-    transform: rotate(0deg);
+  .card:hover .imgBox {
+    transform: none;
   }
-}
 
-.card {
-  cursor: pointer;
-  touch-action: manipulation;
+  .card:hover .bark {
+    opacity: 0;
+  }
 }
