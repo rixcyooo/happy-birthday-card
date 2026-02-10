@@ -2,149 +2,182 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-	font-family: 'Indie Flower', cursive !important;
-  background: #FDE3A7; /*CAPE HONEY*/
-	margin: 0px;
-	padding: 0px;
+  font-family: 'Indie Flower', cursive !important;
+  background: #FDE3A7;
+  margin: 0;
+  padding: 0;
 }
 
 ::selection {
-	background: transparent;
+  background: transparent;
 }
 
 h4 {
-	font-size: 26px;
-	line-height: 1px;
-	font-family: 'Amatic SC', cursive !important;
+  font-size: 26px;
+  line-height: 1px;
+  font-family: 'Amatic SC', cursive !important;
 }
 
-.color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
-.color2{color:#C0392B/*TALL POPPY*/}
+.color1 {
+  color: #1BBC9B;
+}
 
+.color2 {
+  color: #C0392B;
+}
 
+/* =========================
+   CARD BASE
+========================= */
 .card {
-	color: #013243; /*SHERPA BLUE*/
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 300px;
-	height: 400px;
-	background: #e0e1dc;
-	transform-style: preserve-3d;
-	transform: translate(-50%,-50%) perspective(2000px);
-	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
-	transition: 1s;
+  color: #013243;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 400px;
+  background: #e0e1dc;
+
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5),
+              20px 0 60px rgba(0, 0, 0, .5);
+
+  transition: 1s;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
+/* Hover effect (PC only) */
 .card:hover {
-	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
-	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+  transform: translate(-50%, -50%) perspective(2000px)
+             rotate(15deg) scale(1.2);
+
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5),
+              0 10px 100px rgba(0, 0, 0, .5);
 }
 
+/* Card edges */
 .card:before {
-	content:'';
-	position: absolute;
-	top: -5px;
-	left: 0;
-	width: 100%;
-	height: 5px;
-	background: #BAC1BA;
-	transform-origin: bottom;
-	transform: skewX(-45deg);
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #BAC1BA;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
 }
 
 .card:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: -5px;
-	width: 5px;
-	height: 100%;
-	background: #92A29C;
-	transform-origin: left;
-	transform: skewY(-45deg);
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #92A29C;
+  transform-origin: left;
+  transform: skewY(-45deg);
 }
 
+/* =========================
+   IMAGE BOX
+========================= */
 .card .imgBox {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	transform-origin: left;
-	transition: .7s;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: .7s;
 }
 
 .card .bark {
-	position: absolute;
-	background: #e0e1dc;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: .7s;
+  position: absolute;
+  background: #e0e1dc;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .7s;
 }
 
 .card .imgBox img {
-	min-width: 250px;
-	max-height: 400px;
+  min-width: 250px;
+  max-height: 400px;
 }
 
+/* Hover open (PC) */
 .card:hover .imgBox {
-	transform: rotateY(-135deg);
+  transform: rotateY(-135deg);
 }
 
 .card:hover .bark {
-	opacity: 1;
-	transition: .6s;
+  opacity: 1;
+  transition: .6s;
   box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
+/* =========================
+   DETAILS TEXT
+========================= */
 .card .details {
-	position: absolute;
-	top: 0;
-	left: 0;
-	box-sizing: border-box;
-	padding: 0 0 0 10px;
-	z-index: -1;
-	margin-top: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+  z-index: -1;
+  margin-top: 70px;
 }
 
 .card .details p {
-	font-size: 15px;
-	line-height: 5px;
-	transform: rotate(-10deg);
-	padding: 0 0 0 20px;
+  font-size: 15px;
+  line-height: 5px;
+  transform: rotate(-10deg);
+  padding-left: 20px;
 }
 
 .card .details h4 {
-	text-align: center;
+  text-align: center;
 }
 
 .text-right {
-	text-align: right;
-}
-
-.card .details .text-right {
+  text-align: right;
   margin-top: 25px;
 }
 
-.card.open {
-  transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
-}
-
+/* =========================
+   TAP OPEN MODE (MOBILE + CLICK)
+========================= */
 .card.open .imgBox {
   transform: rotateY(-135deg);
 }
 
 .card.open .bark {
   opacity: 1;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
+/* =========================
+   MOBILE FIX RESPONSIVE
+========================= */
 @media (max-width: 768px) {
 
-  /* Disable hover effect on mobile */
+  /* Card size + spacing */
+  .card {
+    width: 260px;
+    height: 360px;
+    top: 55%;
+    transform: translate(-50%, -50%) perspective(2000px);
+  }
+
+  /* Disable hover conflicts on mobile */
   .card:hover {
     transform: translate(-50%, -50%) perspective(2000px);
-    box-shadow: inset 300px 0 50px rgba(0,0,0,.5),
-                20px 0 60px rgba(0,0,0,.5);
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5),
+                20px 0 60px rgba(0, 0, 0, .5);
   }
 
   .card:hover .imgBox {
@@ -154,25 +187,14 @@ h4 {
   .card:hover .bark {
     opacity: 0;
   }
-}
 
-@media (max-width: 768px) {
-
-  .card.open {
-    transform: translate(-50%, -50%) perspective(2000px) rotate(10deg) scale(1.05);
+  /* Text readability */
+  .card .details {
+    margin-top: 50px;
   }
 
-  .card.open .imgBox {
-    transform: rotateY(-135deg);
-  }
-
-  .card.open .bark {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 768px) {
   .card .details p {
+    font-size: 14px;
     line-height: 16px;
     transform: rotate(0deg);
   }
