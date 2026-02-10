@@ -137,3 +137,21 @@ h4 {
 .card.open .bark {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 260px;
+    height: 360px;
+    transform: translate(-50%, -50%) perspective(2000px) scale(1);
+  }
+
+  .card:hover {
+    transform: translate(-50%, -50%) perspective(2000px) scale(1);
+  }
+
+  .card .details p {
+    font-size: 14px;
+    line-height: 16px;
+    transform: rotate(0deg);
+  }
+}
